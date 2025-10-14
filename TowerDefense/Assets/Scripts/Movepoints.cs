@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class Movepoints : MonoBehaviour
 {
+
+    public static Movepoints Instance { get; private set; }
+
     public List<Transform> movePointsList;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
+    {
+        Instance = this;
+        Init(); 
+    }   
+
+
+    private void Init()
     {
         Transform[] transforms = transform.GetComponentsInChildren<Transform>();
         movePointsList = new List<Transform>(transforms);
