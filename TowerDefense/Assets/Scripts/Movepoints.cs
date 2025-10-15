@@ -16,7 +16,7 @@ public class Movepoints : MonoBehaviour
     }   
 
 
-    private void Init()
+    private void Init()//初始化路径点
     {
         Transform[] transforms = transform.GetComponentsInChildren<Transform>();
         movePointsList = new List<Transform>(transforms);

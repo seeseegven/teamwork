@@ -11,13 +11,13 @@ public class EnemySpawner : MonoBehaviour
 
     private int enemyCount = 0;
 
-    private void Awake()
+    private void Awake()//单例模式
     {
             Instance = this;
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Start()//开始协程
     {
         StartCoroutine(SpawnEnemy());
     }
@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnEnemy()//协程生成敌人
     {
         foreach (Wave wave in waveList)
         {

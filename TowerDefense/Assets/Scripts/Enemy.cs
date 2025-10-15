@@ -13,19 +13,19 @@ public class Enemy1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
+        targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);//得到目标位置坐标
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate((targetPosition - transform.position).normalized * Time.deltaTime*speed);
+        transform.Translate((targetPosition - transform.position).normalized * Time.deltaTime*speed);//朝向目标位置移动
         if (Vector3.Distance(transform.position, targetPosition) < 0.2f)
         {
             MoveNextPoint();    
         }
     }
-    private void MoveNextPoint()
+    private void MoveNextPoint()//移动到下一个点
     {
         pointIndex++;
         if (pointIndex >= Movepoints.Instance.GetLength())
@@ -35,7 +35,7 @@ public class Enemy1 : MonoBehaviour
         }
         targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
     }
-    void Die()
+    void Die()//敌人死亡
     {
         Destroy(gameObject);
         EnemySpawner.Instance.DecreaseEnemyCount();

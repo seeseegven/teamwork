@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public float speed = 40; 
-    public float zoomSpeed = 500;
+    public float speed = 40; //移动速度
+    public float zoomSpeed = 500;//缩放速度
     // Update is called once per frame
     void Update()
     {
