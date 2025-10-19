@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1 : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     private int pointIndex = 0;
 
@@ -13,19 +13,19 @@ public class Enemy1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);//得到目标位置坐标
+        targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);//寰楀埌鐩爣浣嶇疆鍧愭爣
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate((targetPosition - transform.position).normalized * Time.deltaTime*speed);//朝向目标位置移动
+        transform.Translate((targetPosition - transform.position).normalized * Time.deltaTime*speed);//鏈濆悜鐩爣浣嶇疆绉诲姩
         if (Vector3.Distance(transform.position, targetPosition) < 0.2f)
         {
             MoveNextPoint();    
         }
     }
-    private void MoveNextPoint()//移动到下一个点
+    private void MoveNextPoint()//绉诲姩鍒颁笅涓�涓偣
     {
         pointIndex++;
         if (pointIndex >= Movepoints.Instance.GetLength())
@@ -35,9 +35,13 @@ public class Enemy1 : MonoBehaviour
         }
         targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
     }
-    void Die()//敌人死亡
+    void Die()//鏁屼汉姝讳骸
     {
         Destroy(gameObject);
         EnemySpawner.Instance.DecreaseEnemyCount();
+    }
+    public void TakeDamage(int damage)
+    {
+    
     }
 }
