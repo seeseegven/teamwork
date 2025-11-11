@@ -6,34 +6,23 @@ public class Enemy : MonoBehaviour
 {
     private int pointIndex = 0;
     private Vector3 targetPosition = Vector3.zero;
-    public float speed = 4;
-    // 转向速度（值越大转向越灵敏）
-    public float rotationSpeed = 10f;
+    public float speed = 4f;
 
     void Start()
     {
+        // 初始目标为第一个路径点
         targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
+        // 初始朝向第一个目标点（无延迟）
+        ForceRotateToTarget(targetPosition);
     }
 
     void Update()
     {
-        // 计算目标方向（忽略Y轴高度差，保持在同一平面转向）
-        Vector3 targetDirection = targetPosition - transform.position;
-        targetDirection.y = 0; // 确保只在XZ平面转向
+        // 始终沿当前朝向移动（无停顿）
+        transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
 
-        if (targetDirection.magnitude > 0.1f) // 当有移动方向时才转向
-        {
-            // 计算目标旋转角度
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            // 平滑过渡到目标旋转
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
-
-        // 朝向目标位置移动（沿自身前方向移动）
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-        // 到达当前路径点后切换到下一个
-        if (Vector3.Distance(transform.position, targetPosition) < 0.2f)
+        // 到达当前目标点时，立即切换下一个目标并转向
+        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
             MoveNextPoint();
         }
@@ -47,7 +36,21 @@ public class Enemy : MonoBehaviour
             Die();
             return;
         }
+        // 获取下一个目标点
         targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
+        // 到达当前点后，立即强制转向下一个目标（无平滑过渡，瞬间完成）
+        ForceRotateToTarget(targetPosition);
+    }
+
+    // 强制转向目标点（瞬间完成，无延迟）
+    private void ForceRotateToTarget(Vector3 target)
+    {
+        Vector3 targetDirection = target - transform.position;
+        targetDirection.y = 0; // 忽略Y轴，保持水平转向
+        if (targetDirection.magnitude > 0.01f) // 避免目标点过近导致的旋转异常
+        {
+            transform.rotation = Quaternion.LookRotation(targetDirection);
+        }
     }
 
     void Die()
@@ -58,6 +61,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // 伤害处理逻辑（可后续补充）
+        // 伤害处理逻辑（示例）
+        // health -= damage;
+        // if (health <= 0) Die();
     }
 }

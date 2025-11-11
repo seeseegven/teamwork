@@ -6018,7 +6018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 0}
   waveList:
-  - enemyPrefab: {fileID: 8704279066597433615, guid: 0a9219774b566e841873d438f05c33cc, type: 3}
+  - enemyPrefab: {fileID: 898083238357855666, guid: 8604ff708b004684990bfc65599da6b4, type: 3}
     count: 2
     rate: 1
   - enemyPrefab: {fileID: 516899797549364270, guid: b98b73741ee5c184d8b0c8478247b776, type: 3}
