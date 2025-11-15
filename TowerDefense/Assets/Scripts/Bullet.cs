@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    // 子弹伤害
     public int damage = 50;
+    // 子弹速度
     public float speed = 50;
 
     public GameObject bulletExplosionPrefab;
@@ -36,5 +38,12 @@ public class Bullet : MonoBehaviour
     private void Dead()
     {
         Destroy(this.gameObject);
+        GameObject go = GameObject.Instantiate(bulletExplosionPrefab, transform.position, Quaternion.identity);
+        Destroy(go, 1);
+
+        if (target != null)
+        {
+            go.transform.parent = target.transform;
+        }
     }
 }
