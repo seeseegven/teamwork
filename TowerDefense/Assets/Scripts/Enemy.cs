@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     private int pointIndex = 0;
     private Vector3 targetPosition = Vector3.zero;
     public float speed = 4f;
+    public int hp = 100;
 
     void Start()
     {
@@ -57,12 +58,16 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
         EnemySpawner.Instance.DecreaseEnemyCount();
+        GameObject go = GameObject.Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(go, 1);
     }
 
     public void TakeDamage(int damage)
     {
-        // 伤害处理逻辑（示例）
-        // health -= damage;
-        // if (health <= 0) Die();
+        hp-=damage;
+        if (hp <= 0)
+        {
+            Die();
+        }
     }
 }
