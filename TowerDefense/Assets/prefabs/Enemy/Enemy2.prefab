@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2227131259997187513}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  hp: 100
+  explosionPrefab: {fileID: 7075894769235992510, guid: 56c65591badf41e47b4e96cb49fbb756, type: 3}
