@@ -455,4 +455,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rotationSpeed: 10
+  hp: 100
+  explosionPrefab: {fileID: 7075894769235992510, guid: dc900bb610e62124c809a3dc1ae4f8c8, type: 3}
