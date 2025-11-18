@@ -185,7 +185,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5735674944327630333, guid: 19e9f5098b38fa645abbd0b84e77ba68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 696601742}
   m_SourcePrefab: {fileID: 100100000, guid: 19e9f5098b38fa645abbd0b84e77ba68, type: 3}
 --- !u!4 &13155346 stripped
 Transform:
@@ -5506,6 +5509,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2548358764925410080, guid: 19e9f5098b38fa645abbd0b84e77ba68, type: 3}
   m_PrefabInstance: {fileID: 686141190}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &696601738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5735674944327630333, guid: 19e9f5098b38fa645abbd0b84e77ba68, type: 3}
+  m_PrefabInstance: {fileID: 13155345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &696601742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696601738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d14e3e785f2902469087bb6e0322201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuildEffect: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6080,22 +6101,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StandardTurretData:
-    Turretlv1Prefab: {fileID: 0}
-    lv1cost: 0
-    Turretlv2Prefab: {fileID: 0}
-    lv2cost: 0
+    turretPrefab: {fileID: 5955567115549697237, guid: 8984de8d462be9f4bb99f2a4c5879a61, type: 3}
+    cost: 30
+    turretUpgradePrefab: {fileID: 9040728956759152922, guid: ae179ddb6d1217b478f32551269339f9, type: 3}
+    costUpgraded: 40
     type: 0
   MissileTurretData:
-    Turretlv1Prefab: {fileID: 0}
-    lv1cost: 0
-    Turretlv2Prefab: {fileID: 0}
-    lv2cost: 0
-    type: 0
+    turretPrefab: {fileID: 9010544669995823697, guid: 2cc2050157225cb4bb180202d0a95a40, type: 3}
+    cost: 50
+    turretUpgradePrefab: {fileID: 4051519845978997603, guid: f6b08bdd80160684aadc992a02d15124, type: 3}
+    costUpgraded: 60
+    type: 1
   LazerTurretData:
-    Turretlv1Prefab: {fileID: 0}
-    lv1cost: 0
-    Turretlv2Prefab: {fileID: 0}
-    lv2cost: 0
+    turretPrefab: {fileID: 6241375663626616364, guid: b2ff62288770ec147874638e7749a968, type: 3}
+    cost: 70
+    turretUpgradePrefab: {fileID: 9208738417025030219, guid: 364277e4b07117c4296328d769ebe6a7, type: 3}
+    costUpgraded: 100
+    type: 2
+  SelectedTurretData:
+    turretPrefab: {fileID: 0}
+    cost: 0
+    turretUpgradePrefab: {fileID: 0}
+    costUpgraded: 0
     type: 0
   moneyText: {fileID: 1250529083}
 --- !u!1001 &797741004
@@ -7533,7 +7560,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7629,18 +7655,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 51.3
   zoomSpeed: 4000
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe7f76d7181c28429f367534b350c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &972780920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10328,6 +10342,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1037596593}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 792791563}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMissileSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 244949244667033086, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Name
       value: missileTurret
@@ -16016,6 +16062,38 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1037596593}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 792791563}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnStandardSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 244949244667033086, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Name
       value: standardTurret
@@ -17926,9 +18004,45 @@ PrefabInstance:
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 1037596593}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 792791563}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLaserSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 212650371145246407, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 244949244667033086, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Name
       value: laserTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: m_Text
+      value: $ 30
       objectReference: {fileID: 0}
     - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Color.b
