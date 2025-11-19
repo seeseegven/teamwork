@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3894637457397177238}
   - component: {fileID: 2644261332985446264}
   - component: {fileID: 8645273556621951356}
+  - component: {fileID: -4706277359033279060}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-4706277359033279060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367709729409196082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd4c16e766dd94498e35a5e77a2ec26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  speed: 50
+  bulletExplosionPrefab: {fileID: 831612332773555701, guid: 67991300e489cb442b5f9df608e26481, type: 3}

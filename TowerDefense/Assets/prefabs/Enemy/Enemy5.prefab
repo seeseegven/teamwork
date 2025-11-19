@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: -5086256572253398953}
   m_Layer: 0
   m_Name: Enemy5
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,4 +456,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   hp: 100
-  explosionPrefab: {fileID: 7075894769235992510, guid: dc900bb610e62124c809a3dc1ae4f8c8, type: 3}
+  explosionPrefab: {fileID: 4632801859561927819, guid: dc900bb610e62124c809a3dc1ae4f8c8, type: 3}

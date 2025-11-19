@@ -5,30 +5,39 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private int pointIndex = 0;
-
-    private Vector3 targetPosition=Vector3.zero;
-
+    private Vector3 targetPosition = Vector3.zero;
     public float speed = 4;
-
     public int hp = 100;
     public GameObject explosionPrefab;
 
-    // Start is called before the first frame update
     void Start()
     {
-        targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);//得到目标位置坐标
+        // 获取第一个目标点
+        targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
+        // 强制初始朝向第一个目标点（关键：解决初始反向问题）
+        ForceFaceTarget(targetPosition);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate((targetPosition - transform.position).normalized * Time.deltaTime*speed);//朝向目标位置移动
+        // 沿直线向目标点移动（移动逻辑与朝向无关，确保路径正确）
+        Vector3 moveDir = (targetPosition - transform.position).normalized;
+        transform.position += moveDir * speed * Time.deltaTime;
+
+        // 同时让敌人朝向移动方向（视觉同步，避免“侧移”或“倒移”）
+        if (moveDir.magnitude > 0.01f)
+        {
+            transform.rotation = Quaternion.LookRotation(moveDir);
+        }
+
+        // 到达当前点后切换下一个目标
         if (Vector3.Distance(transform.position, targetPosition) < 0.2f)
         {
-            MoveNextPoint();    
+            MoveNextPoint();
         }
     }
-    private void MoveNextPoint()//移动到下一个点
+
+    private void MoveNextPoint()
     {
         pointIndex++;
         if (pointIndex >= Movepoints.Instance.GetLength())
@@ -36,15 +45,32 @@ public class Enemy : MonoBehaviour
             Die();
             return;
         }
+        // 更新目标点
         targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
     }
-    void Die()//敌人死亡
+
+    // 强制朝向目标点（初始化时调用，确保初始方向正确）
+    private void ForceFaceTarget(Vector3 target)
+    {
+        Vector3 targetDir = target - transform.position;
+        targetDir.y = 0; // 忽略Y轴，保持水平朝向
+        if (targetDir.magnitude > 0.01f)
+        {
+            transform.rotation = Quaternion.LookRotation(targetDir);
+        }
+    }
+
+    void Die()
     {
         Destroy(gameObject);
         EnemySpawner.Instance.DecreaseEnemyCount();
-        GameObject go = GameObject.Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Destroy(go, 1);
+        if (explosionPrefab != null)
+        {
+            GameObject go = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(go, 1f);
+        }
     }
+
     public void TakeDamage(int damage)
     {
         hp -= damage;
