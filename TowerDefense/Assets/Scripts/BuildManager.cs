@@ -47,11 +47,11 @@ public class BuildManager : MonoBehaviour
     {
         return money >= need;
     }
-    
+
     public void ChangeMoney(int value)
     {
         this.money += value;
-        moneyText.text = money.ToString();
+        moneyText.text = "гд"+money.ToString();
     }
     // Start is called before the first frame update
     void Start()
