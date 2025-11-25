@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         pointIndex++;
         if (pointIndex >= Movepoints.Instance.GetLength())
         {
+            GameManager.Instance.ShowFail();
             Die();
             return;
         }

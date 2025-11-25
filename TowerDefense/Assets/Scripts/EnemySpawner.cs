@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
 
     private int enemyCount = 0;
 
+    private Coroutine spawnCoroutine;
     private void Awake()//单例模式
     {
             Instance = this;
@@ -19,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()//开始协程
     {
-        StartCoroutine(SpawnEnemy());
+         spawnCoroutine = StartCoroutine(SpawnEnemy());
     }
 
     // Update is called once per frame
@@ -34,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int i = 0; i < wave.count; i++)
             {
-                GameObject.Instantiate(wave.enemyPrefab, transform.position, Quaternion.identity);
+                GameObject.Instantiate(wave.enemyPrefab, startPoint.position, Quaternion.identity);
                 enemyCount++;
                 if (i != wave.count - 1)
                 {
@@ -48,7 +49,10 @@ public class EnemySpawner : MonoBehaviour
         }
         yield return null;
     }
-
+    public void Stop()
+    {
+        StopCoroutine(spawnCoroutine);
+    }
     public void DecreaseEnemyCount()
     {
         if(enemyCount >0)
