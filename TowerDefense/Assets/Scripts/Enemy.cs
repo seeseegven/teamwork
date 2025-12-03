@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     private int pointIndex = 0;
     private Vector3 targetPosition = Vector3.zero;
     public float speed = 4;
-    public int hp = 100;
+    public float hp = 100f;
     public GameObject explosionPrefab;
 
     void Start()
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
         if (hp <= 0)
