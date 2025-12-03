@@ -15,7 +15,7 @@ public class Turret : MonoBehaviour
 
     private Transform head;
 
-    private void Start()
+    protected virtual void Start()
     {
         head = transform.Find("Head");
     }
@@ -43,7 +43,7 @@ public class Turret : MonoBehaviour
         }
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
         if (enemyList == null || enemyList.Count == 0) return;
 
@@ -55,7 +55,7 @@ public class Turret : MonoBehaviour
             {
                 GameObject go = GameObject.Instantiate(bulletPrefab, bulletPosition.position, Quaternion.identity);
                 go.GetComponent<Bullet>().SetTarget(target);
-                //更新下次攻击时间
+                //鏇存柊涓嬫鏀诲嚮鏃堕棿
                 nextAttackTime = Time.time + attackRate;
             }
             
@@ -65,7 +65,7 @@ public class Turret : MonoBehaviour
     public Transform GetTarget()
     {
         List<int> indexList = new List<int>();
-        //移除空敌人的引用
+        //绉婚櫎绌烘晫浜虹殑寮曠敤
         for(int i = 0; i < enemyList.Count; i++)
         {
             if (enemyList[i] == null || enemyList[i].Equals(null))
