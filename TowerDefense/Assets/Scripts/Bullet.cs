@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     // 子弹伤害
     public int damage = 50;
     // 子弹速度
-    public float speed = 50;
+    public float speed = 70;
 
     public GameObject bulletExplosionPrefab;
 

@@ -55,7 +55,7 @@ public class Turret : MonoBehaviour
             {
                 GameObject go = GameObject.Instantiate(bulletPrefab, bulletPosition.position, Quaternion.identity);
                 go.GetComponent<Bullet>().SetTarget(target);
-                //鏇存柊涓嬫鏀诲嚮鏃堕棿
+                //更新下次攻击时间
                 nextAttackTime = Time.time + attackRate;
             }
             
@@ -65,7 +65,7 @@ public class Turret : MonoBehaviour
     public Transform GetTarget()
     {
         List<int> indexList = new List<int>();
-        //绉婚櫎绌烘晫浜虹殑寮曠敤
+        //移除空敌人的引用
         for(int i = 0; i < enemyList.Count; i++)
         {
             if (enemyList[i] == null || enemyList[i].Equals(null))
