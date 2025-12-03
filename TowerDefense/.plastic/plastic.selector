@@ -1,0 +1,4 @@
+repository "塔防@tj_2129407743_qq_com@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"

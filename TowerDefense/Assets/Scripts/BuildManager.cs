@@ -15,11 +15,14 @@ public class BuildManager : MonoBehaviour
 
     public TextMeshProUGUI moneyText;
 
+    private Animator moneyTextAnimation;
+
     private int money = 1000;
 
     private void Awake()
     {
         Instance = this;
+        moneyTextAnimation = moneyText.GetComponent<Animator>();
     }
     public void OnStandardSelected(bool isOn)//¼à²âÅÚËþµÄÑ¡Ôñ
     {
@@ -45,13 +48,24 @@ public class BuildManager : MonoBehaviour
 
     public bool IsEnough(int need)
     {
-        return money >= need;
+        if (need <= money)
+        {
+            return true;
+        }
+        else
+        {
+            Flicker();
+            return false;
+        }
     }
-
     public void ChangeMoney(int value)
     {
         this.money += value;
         moneyText.text = "£¤"+money.ToString();
+    }
+    private void Flicker()
+    {
+        moneyTextAnimation.SetTrigger("Flicker");
     }
     // Start is called before the first frame update
     void Start()
