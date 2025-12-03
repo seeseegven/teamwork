@@ -84,7 +84,7 @@ PrefabInstance:
       addedObject: {fileID: -7906625154826058249}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 5c84fd4f5f091384eaa026c58f00131d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -9084599684326549652}
+      addedObject: {fileID: 3527371366429473584}
   m_SourcePrefab: {fileID: 100100000, guid: 5c84fd4f5f091384eaa026c58f00131d, type: 3}
 --- !u!1 &9208738417025030219 stripped
 GameObject:
@@ -139,7 +139,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-9084599684326549652
+--- !u!114 &3527371366429473584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,10 +148,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9208738417025030219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2be24e1693acf7498dd7614761125c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 27d860e8f35d6da4da1fe5a552079174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyList: []
-  bulletPrefab: {fileID: 1285465433697877104, guid: e2bd9dc3ace129448ac75b66acdc00af, type: 3}
-  bulletPosition: {fileID: 7771689516421404499, guid: 8984de8d462be9f4bb99f2a4c5879a61, type: 3}
-  attackRate: 1
+  bulletPrefab: {fileID: 0}
+  bulletPosition: {fileID: 0}
+  attackRate: 0.5
+  damagePerSecond: 10
