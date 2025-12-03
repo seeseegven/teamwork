@@ -5735,6 +5735,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1037596592}
+  - {fileID: 1250529085}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6058,7 +6059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 0}
   waveList:
-  - enemyPrefab: {fileID: 8704279066597433615, guid: 0a9219774b566e841873d438f05c33cc, type: 3}
+  - enemyPrefab: {fileID: 898083238357855666, guid: 8604ff708b004684990bfc65599da6b4, type: 3}
     count: 2
     rate: 1
   - enemyPrefab: {fileID: 516899797549364270, guid: b98b73741ee5c184d8b0c8478247b776, type: 3}
@@ -10249,11 +10250,11 @@ RectTransform:
   m_LocalScale: {x: 0.61332583, y: 0.61195374, z: 0.61195374}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 720202201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1052.864, y: 387.19217}
+  m_AnchoredPosition: {x: -300, y: 123.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1253646880
@@ -10377,6 +10378,10 @@ PrefabInstance:
     - target: {fileID: 244949244667033086, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Name
       value: missileTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: m_Text
+      value: $ 50
       objectReference: {fileID: 0}
     - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Color.b
@@ -16099,6 +16104,10 @@ PrefabInstance:
       value: standardTurret
       objectReference: {fileID: 0}
     - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
+      propertyPath: m_Text
+      value: $ 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
@@ -16172,7 +16181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762271067095404572, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -187.9539
+      value: -11.9
       objectReference: {fileID: 0}
     - target: {fileID: 762271067095404572, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18042,7 +18051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Text
-      value: $ 30
+      value: $ 70
       objectReference: {fileID: 0}
     - target: {fileID: 533581736689959558, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_Color.b
@@ -18118,7 +18127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762271067095404572, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.953903
+      value: -179.6
       objectReference: {fileID: 0}
     - target: {fileID: 762271067095404572, guid: 5c27758feeb555d43871a2a857b02b81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18475,4 +18484,3 @@ SceneRoots:
   - {fileID: 792791562}
   - {fileID: 1586276566}
   - {fileID: 720202201}
-  - {fileID: 1250529085}
