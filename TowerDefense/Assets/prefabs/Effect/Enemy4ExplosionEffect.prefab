@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 831612332773555701, guid: 67991300e489cb442b5f9df608e26481, type: 3}
+      propertyPath: m_Name
+      value: Enemy4ExplosionEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 1492715290291794405, guid: 67991300e489cb442b5f9df608e26481, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.16273086
@@ -75,6 +79,18 @@ PrefabInstance:
     - target: {fileID: 3023005454950405824, guid: 67991300e489cb442b5f9df608e26481, type: 3}
       propertyPath: m_Name
       value: Enemy4ExplosionEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909769806270909517, guid: 67991300e489cb442b5f9df608e26481, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f1830977666b834fa2baa0d1c87a6d8, type: 2}
+    - target: {fileID: 8741106912339172901, guid: 67991300e489cb442b5f9df608e26481, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741106912339172901, guid: 67991300e489cb442b5f9df608e26481, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

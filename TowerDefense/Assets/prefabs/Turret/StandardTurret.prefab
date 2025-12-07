@@ -172,7 +172,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 7.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2823511816993111726
 Rigidbody:
@@ -216,7 +216,7 @@ MonoBehaviour:
   enemyList: []
   bulletPrefab: {fileID: 6613596396642948798, guid: 28734608db2da3a44a1a98f7fc36f7bc, type: 3}
   bulletPosition: {fileID: 7771689516421404499}
-  attackRate: 0.2
+  attackRate: 0.4
 --- !u!1 &5955567115549697239
 GameObject:
   m_ObjectHideFlags: 0

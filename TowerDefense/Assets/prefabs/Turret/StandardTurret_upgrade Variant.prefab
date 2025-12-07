@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4218564747703153079, guid: 8984de8d462be9f4bb99f2a4c5879a61, type: 3}
       propertyPath: m_Radius
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5955567115549407477, guid: 8984de8d462be9f4bb99f2a4c5879a61, type: 3}
       propertyPath: m_LocalScale.x
@@ -140,4 +140,4 @@ MonoBehaviour:
   enemyList: []
   bulletPrefab: {fileID: 6613596396642948798, guid: 28734608db2da3a44a1a98f7fc36f7bc, type: 3}
   bulletPosition: {fileID: 4903265346717035164}
-  attackRate: 0.5
+  attackRate: 0.3
