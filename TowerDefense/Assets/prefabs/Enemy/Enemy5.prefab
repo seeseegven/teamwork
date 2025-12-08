@@ -416,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8322686320876518325}
   - component: {fileID: -5086256572253398953}
+  - component: {fileID: 8682275508946808416}
   m_Layer: 0
   m_Name: Enemy5
   m_TagString: Enemy
@@ -434,7 +435,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -70, y: 1.95, z: 74.293236}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 990882700139846624}
   - {fileID: 1782034508692874133}
@@ -454,6 +455,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c902cb988e4a9b747afb3f2e45f2fa7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  hp: 100
+  speed: 6
+  hp: 1000
   explosionPrefab: {fileID: 4632801859561927819, guid: dc900bb610e62124c809a3dc1ae4f8c8, type: 3}
+--- !u!135 &8682275508946808416
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704279066597433615}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
