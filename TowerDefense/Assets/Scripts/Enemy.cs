@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     private int pointIndex = 0;
     private Vector3 targetPosition = Vector3.zero;
     public float speed = 4;
-    public float hp = 100f;
+    public float hp = 100;
+    private float maxHP= 0;
     public GameObject explosionPrefab;
+
+    private Slider hpSlider;
 
     void Start()
     {
@@ -16,6 +20,10 @@ public class Enemy : MonoBehaviour
         targetPosition = Movepoints.Instance.GetWaypoint(pointIndex);
         // 强制初始朝向第一个目标点（关键：解决初始反向问题）
         ForceFaceTarget(targetPosition);
+        // 获取血条组件
+        hpSlider = transform.Find("Canvas/HPSlider").GetComponent<Slider>();
+        hpSlider.value = 1;
+        maxHP = hp;
     }
 
     void Update()
@@ -74,6 +82,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         hp -= damage;
+        hpSlider.value = (float)hp / maxHP;
         if (hp <= 0)
         {
             Die();
