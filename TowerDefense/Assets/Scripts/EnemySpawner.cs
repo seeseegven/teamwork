@@ -48,6 +48,11 @@ public class EnemySpawner : MonoBehaviour
             } 
         }
         yield return null;
+        while (enemyCount > 0)
+        {
+            yield return 0;
+        }
+        GameManager.Instance.ShowWin();
     }
     public void Stop()
     {

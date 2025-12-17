@@ -16,6 +16,14 @@ public class GameEndUI : MonoBehaviour
     {
         animator.SetTrigger("End");
     }
+    public void RestartSelected() 
+    {
+        GameManager.Instance.OnRestartClick();
+    }
+    public void MenuSelected() 
+    {
+        GameManager.Instance.OnMenuClick();
+    }
     // Update is called once per frame
     void Update()
     {
